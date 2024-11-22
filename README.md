@@ -1,4 +1,4 @@
-# MiniProject-LibraryManagementSyste
+# MiniProject-LibraryManagementSystem
 
 ## Overview
 This Library Management System is a web application designed to streamline library resources, making it easier for students and administrators to access and manage materials like books, journals, publications, and more. The project is developed using a clean and minimalistic design approach, ensuring an intuitive user experience with key functionalities and modern styling.
