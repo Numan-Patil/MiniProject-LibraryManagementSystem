@@ -21,7 +21,7 @@ This Library Management System is a web application designed to streamline libra
 - **Miscellaneous Section**: Comprehensive search functionality for other library resources.
 - **Responsive Design**: CSS adapted for consistent styling and usability on various devices.
 - **Admin Dashboard**: Centralized control for administrators to manage content and library resources.
-- **Modern UI/UX**: Minimalistic design using black, white, and blue color themes, rounded edges, shadows, and streamlined animations.
+- **Modern UI/UX**: Minimalistic design using black, white, and lavender color themes, rounded edges, shadows, and streamlined animations.
 
 ## Design Philosophy
 The design approach for this Library Management System is focused on:
@@ -39,23 +39,22 @@ The design approach for this Library Management System is focused on:
 ## Pages and Functionalities
 ### 1. **Login & Register Page**
    - Includes secure login and registration forms.
-   - Features a back button that redirects to the main page (`index.html`).
    - Styled with a clean interface and separate CSS for ease of management.
 
 ### 2. **Landing Page**
    - Main entry point with options for students and librarians.
-   - Includes a start button and a dedicated librarian button.
+   - Includes library details and a dedicated chatbot.
    - Sections such as Course Books, Journals, and Miscellaneous are available for quick access.
 
 ### 3. **Student Dashboard**
-   - Minimalistic design with a black, white, and blue color scheme.
+   - Minimalistic design with a black, white, and lavender color scheme.
    - Provides access to course books, journals, and a miscellaneous search section.
    - Rounded edges and shadow effects for a modern look.
 
 ### 4. **Admin Dashboard**
    - Allows administrators to manage library content and monitor user interactions.
-   - Includes a header image and welcoming text ("Welcome Admin" and "BLDEA College").
    - Custom CSS based on the styling themes of the Student Dashboard for consistency.
+   - Admin password "admin@123"
 
 ### 5. **Course Books Page**
    - Dedicated page with redesigned UI, focusing solely on course book browsing.
@@ -80,14 +79,6 @@ The design approach for this Library Management System is focused on:
 2. **Student Login**: Explore library resources, including books, journals, and miscellaneous sections.
 3. **Search and Filter**: Utilize the search functionality with filters on the Course Books page.
 
-## Screenshots
-Include screenshots of key pages:
-- Login & Registration Page
-- Student Dashboard
-- Admin Dashboard
-- Course Books Page
-- Journals & Publications Section
-  
 ## Contributing
 Contributions are welcome! To contribute:
 1. Fork the repository.
