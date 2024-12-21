@@ -88,15 +88,6 @@ Include screenshots of key pages:
 - Course Books Page
 - Journals & Publications Section
   
- ![Screenshot (3)](https://github.com/user-attachments/assets/09e68b45-3f79-41d7-b886-f4c5d8124ec0)
-
-  ![Screenshot (2)](https://github.com/user-attachments/assets/1cf56e6e-e134-4fab-bdac-ac41f9defe06)
-  
- ![Screenshot (5)](https://github.com/user-attachments/assets/cc9bd5a2-fd58-42ec-a1fe-cd6e10175319)
- 
- ![Screenshot (6)](https://github.com/user-attachments/assets/d7f30dd1-b123-4d90-8725-7db08b4d8e3b)
-
-
 ## Contributing
 Contributions are welcome! To contribute:
 1. Fork the repository.
