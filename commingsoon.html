@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="icon" href="bldea_logo.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(45deg, #f4f4f4, #ff6ec4, #7873f5);
+            background-size: 300%;
+            animation: gradientBG 8s infinite alternate;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Main Content */
+        .coming-soon-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .coming-soon-container h1 {
+            font-family: 'Arapey', serif;
+            font-weight: 300;
+            font-size: 2.5rem;
+            color: #222831;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-container p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .coming-soon-container .btn {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #fff;
+            background: linear-gradient(45deg, #e587df, #9b4d96);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .coming-soon-container .btn:hover {
+            background: linear-gradient(45deg, #7873f5, #ff6ec4);
+            transform: translateY(-3px);
+        }
+
+        .coming-soon-container span {
+            color: #9b4d96;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-container">
+        <h1>// Awesome Stuff <br><span>Coming Soon</span>!</h1>
+        <p>We are working hard to bring something amazing to you. Stay tuned!</p>
+        <a href="#" class="btn">Notify Me</a>
+    </div>
+</body>
+</html>

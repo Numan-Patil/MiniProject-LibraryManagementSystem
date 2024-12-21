@@ -1,0 +1,321 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+span {
+    color: #9b4d96;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #222831;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    z-index: 1000;
+    padding-top: 20px;
+}
+
+.sidebar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.sidebar .logo h3 {
+    font-family: 'Arapey', serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.sidebar hr {
+    border: 1px solid #9b4d96;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: linear-gradient(45deg, #e587df, #9b4d96);
+}
+
+.sidebar .logo img {
+    height: 5rem; /* Adjust image size */
+    object-fit: cover; /* Ensures the image fits nicely */
+}
+
+
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the search bar container */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 10px;
+    padding: 3px; /* Add padding for the gradient border */
+    background: linear-gradient(45deg, #ffffff, #ffffff, #ff6ec4, #7873f5 );
+    background-size: 300%;
+    background-position: 0% 50%;
+    transition: background-position 0.3s ease-in-out;
+}
+
+/* Hover animation */
+.search-bar:hover {
+    background-position: 100% 50%;
+}
+
+/* Inner container to isolate input */
+.search-bar-inner {
+    flex: 1;
+    height: 100%;
+    background-color: #f4f4f4; /* Matches the background color */
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Inner padding for input */
+    z-index: 1; /* Ensure it stays above the gradient */
+}
+
+/* Style for the input field */
+.search-bar-inner input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: black;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 1200px;
+}
+
+section h2 {
+    font-family: 'Arapey', serif;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    background: #f4f4f4;
+    border: 2px solid #9b4d96;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+/* Book Cards */
+.book-list {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-card {
+    margin-top: 10px;
+    background: #f4f4f4;
+    border: 1px solid #9b4d96;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Notifications */
+.notification-list,
+.history-list {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.notification-list li,
+.history-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    border-left: 4px solid #9b4d96;
+}
+
+   /* Book List Container */
+   .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-left: 0;
+    height: 50%;
+    width: 100%;
+}
+
+/* Book Card Styling */
+.book-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Three cards in a row */
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 400px;
+}
+
+.book-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32%; /* Adjusted height for purple top */
+    background-color: #9b4d96;
+    border-radius: 15px 15px 0 0;
+    z-index: 0;
+}
+
+.book-card h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 35px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.book-card .book-meta {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.book-card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Borrow Button */
+.borrow-btn {
+    background-color: #222831;
+    color: white;
+    border: none;
+    width: 320px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stays in a fixed position */
+    bottom: 30px; /* 30px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Ensures it's on top of other elements */
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    color: white; /* White text */
+    cursor: pointer;
+    padding: 20px;
+    opacity: 0.8;
+    border-radius: 100px; /* Circular button */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}

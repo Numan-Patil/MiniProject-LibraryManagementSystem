@@ -1,0 +1,985 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Navbar Container */
+.navbar-container {
+    position: sticky;
+    width: 100%;
+    max-width: 1200px; /* Wider for a modern look */
+    margin-top: 20px;
+    z-index: 10;
+    display: flex; /* Align navbar and button horizontally */
+    justify-content: space-between; /* Space between navbar and login button */
+    align-items: center; /* Align items vertically */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background: #222831; /* Dark modern tone */
+    padding: 15px 20px;
+    border-radius: 20px; /* Smooth edges */
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1; /* Allow navbar to take remaining space */
+}
+
+/* Navbar Links */
+.nav-link {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #e587df; /* Purple hover color */
+}
+
+
+/* Hamburger Icon Styles */
+.hamburger {
+    color: #f0f0f0;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 100;
+    cursor: pointer;
+    padding: 20px 20px;
+    z-index: 1001; /* Ensure it is above the sidebar */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    height: 100%;
+    width: 250px;
+    will-change: left;
+    background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    color: #222831; /* Optional: set text color for better visibility */
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it is above other content */
+    padding-top: 20px; /* Space for logo and heading */
+}
+
+.sidebar.active {
+    left: 0; /* Show sidebar when active */
+}
+
+/* Logo Styles */
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Padding for logo */
+}
+
+.sidebar .logo img {
+    width: 50px; /* Adjust logo size */
+    margin-right: 10px; /* Space between logo and heading */
+    border-radius: 7px;
+}
+
+.sidebar .logo h2 {
+    font-size: 2rem; /* Heading size */
+    margin: 0; /* Remove margin */
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #222831;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    border-radius: 50px;
+    color: #fff;
+}
+
+/* Login Button */
+.login-btn {
+    padding: 25px 50px;
+    text-decoration: none;
+    float: right;
+    margin-left: 60px;
+    font-size: 1rem;
+    background-color: #222831; /* Purple button */
+    color: #ffffff;
+    border: none;
+    border-radius: 20px; /* button */
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; /* Set positioning for layering */
+    overflow: hidden; /* Prevent overflow of the fill effect */
+    transition: color 0.3s ease-in-out;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    font-weight: 500;
+    z-index: 1; /* Behind the text */
+    transition: width 0.4s ease-in-out;
+    border-radius: 18px; /* Match the button's shape */
+}
+
+/* On Hover - Fill Animation */
+.login-btn:hover::before {
+    width: 100%; /* Fill the button */
+}
+
+
+.login-btn:hover {
+    color: #ffffff;
+}
+
+/* Ensure Text Stays Above Animation */
+.login-btn span {
+    position: relative;
+    z-index: 2; /* Ensure text appears above the black background */
+}
+
+/*Header Section*/
+/* Typography Styling for Library Name */
+.library-name {
+    font-family: 'Arapey', sans-serif; /* Elegant serif font style */
+    font-size: 6rem; /* Large size for prominence */
+    text-align: center; /* Center-align the text */
+    color: #222831; /* for a pleasing, calm aesthetic */
+    margin-top: 50px; /* Space between header and text */
+    letter-spacing: 1px; /* Slightly increase letter spacing for elegance */
+    font-weight: 100; /* Normal font weight for a clean appearance */
+    max-width: 1000px; /* Limit the width of the text */
+    margin-left: auto; /* Center text horizontally */
+    margin-right: auto;
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Align text and image vertically */
+    justify-content: center; /* Center both text and image horizontally */
+    gap: 10px; /* Space between text and image */
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+
+}
+
+/* Typography and Image Alignment */
+.library-name {
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Align text and image vertically */
+    justify-content: center; /* Center both text and image horizontally */
+    gap: 10px; /* Space between text and image */
+    text-align: center; /* Ensure text is centered */
+    margin-top: 50px;
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+}
+
+.library-name span {
+    color: #9b4d96;
+    font-size: 6rem; /* Large font for emphasis */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+.library-name img {
+    height: 10rem; /* Adjust image size */
+    object-fit: cover; /* Ensures the image fits nicely */
+
+}
+
+/* Add animation to Library Name */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.library-name {
+    animation: fadeInSlideUp 1.5s ease-in-out;
+    opacity: 0; /* Ensure the animation starts with 0 opacity */
+    animation-fill-mode: forwards; /* Retain the final state after animation ends */
+}
+
+.counter-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px ;
+    margin-top: 20px;
+}
+
+.counter {
+    text-align: center;
+    padding: 50px;
+}
+
+.counter h3 {
+    font-size: 2.5em;
+    color: #9b4d96; /* Adjust color as needed */
+    transition: color 0.5s ease;
+}
+
+.counter-section .count {
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    color: #9b4d96; /* Starting color */
+    font-family: 'Poppins', sans-serif;
+}
+
+.data{
+    font-family: monospace;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.data span{
+    color: #9b4d96;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #222831;
+    border-radius: 12px;
+    margin: 2rem auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.vision-mission .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.vision-mission .text {
+    width: 60%;
+}
+
+.vision-mission .section-box {
+    margin-bottom: 1.5rem;
+}
+
+.vision-mission h3 {
+    font-family: 'Arapey', sans-serif;
+    font-size: 2em;
+    font-weight: 550;
+    color: #e587df;
+    margin-bottom: 0.5rem;
+}
+
+.vision-mission hr {
+    border: 1px solid #ccc;
+    width: 30%;
+    margin: 0.5rem 0;
+}
+
+.vision-mission p {
+    font-weight: 300;
+    color: #fff;
+}
+.vision-mission .eye-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision-mission .eye-background {
+    width: 220px; /* Slightly larger for more balance */
+    height: 120px; /* Adjust for a more natural height */
+    background: linear-gradient(145deg, #fff, #f0f0f0); /* Soft sclera-like gradient */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Smooth round shape */
+}
+
+.vision-mission .eye {
+    width: 90px; /* Adjust iris size for more proportionate look */
+    height: 90px;
+    background-color: #9b4d96; /* Purple for iris */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/* Pupil styling */
+.vision-mission .pupil {
+    width: 30px; /* Larger pupil size for better proportion */
+    height: 30px;
+    background-color: #000; /* Black pupil */
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.1s linear; /* Smooth transition for pupil movement */
+}
+
+/* Adding realistic highlights to the eye */
+.vision-mission .eye::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    background-color: white; /* White highlight */
+    border-radius: 50%;
+    opacity: 0.8; /* Subtle highlight effect */
+}
+
+/* Library Timings Section */
+.timings {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem; 
+    margin: 2rem auto;
+    width: 90%; 
+    max-width: 1400px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    margin-bottom: 70px;
+}
+
+/* Heading Style */
+.timings h3 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #222831; /* Dark text color for high contrast */
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Slight spacing between letters */
+    padding-bottom: 10px;
+    border-bottom: 4px solid #9b4d96; /* Accent border for the heading */
+    text-align: center; /* Centered heading */
+    font-family: 'Arapey', sans-serif;
+}
+
+/* Table Style */
+.timings table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.timings span{
+    color: #9b4d96;
+}
+
+/* Table cells */
+.timings td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e1e1e1;
+    color: #555;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+/* Highlight first column */
+.timings td:first-child {
+    font-weight: 600;
+    color: #222831;
+}
+
+/* Hover effect for rows */
+.timings tr:hover td {
+    background-color: #9b4d96; 
+    color: #fff; 
+    cursor: pointer;
+}
+
+/* Remove border on last row */
+.timings tr:last-child td {
+    border-bottom: none;
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .timings {
+        width: 95%; /* More space on smaller screens */
+        padding: 1.5rem;
+    }
+
+    .timings h3 {
+        font-size: 1.8rem; /* Smaller font size on mobile */
+    }
+
+    .timings table {
+        font-size: 1rem; /* Slightly smaller table font size */
+    }
+
+    .timings td {
+        padding: 10px 12px; /* Reduced padding for mobile */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vision-mission {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision, .mission {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .library-name {
+        font-size: 2.5rem; /* Slightly smaller on smaller screens */
+        letter-spacing: 1px; /* Adjust letter spacing for smaller screens */
+    }
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: stretch; /* Make items take full width */
+        gap: 10px;
+    }
+
+    .navbar {
+        flex-grow: 0; /* Remove extra width */
+    }
+
+    .login-btn {
+        width: 100%; /* Full width for mobile */
+    }
+}
+
+/* Chatbot Button Styles */
+#chatbotButton {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #f2e6ee, #e587df);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: jump 0.5s ease-in-out 1s 3; /* Jump animation */
+}
+
+
+#chatbotButton:active {
+    transform: scale(0.95);
+}
+
+#chatbotButton::before {
+    content: '';
+    position: absolute;
+    inset: -1px 30px;
+    background: #9b4d96;
+    transition: 500ms;
+    animation: rotate 4s linear infinite;
+    z-index: -1;
+}
+
+#chatbotButton:hover::before {
+    inset: -1px;
+}
+
+#chatbotButton::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: #222831;
+    z-index: -1;
+}
+
+#chatbotButton img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+/* Chat Sidebar Styles */
+.chat-sidebar {
+    position: fixed;
+    bottom: -650px; /* Hidden initially */
+    right: 20px;
+    width: 320px; /* Fixed width */
+    max-width: 90%; /* Responsive width for smaller screens */
+    height: 650px; /* Fixed height */
+    max-height: 90vh; /* Adjust height for smaller viewports */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: bottom 0.4s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.chat-sidebar.active {
+    bottom: 25px; /* Slide into view when active */
+}
+
+/* Chat Header */
+.chat-header {
+    background: linear-gradient(145deg, #9b4d96, #e587df);
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#closeChat {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#closeChat:hover {
+    color: #222831;
+}
+
+/* Chat Body */
+.chat-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 255, 255, 0.7); /* Slight opacity */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Blur effect */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Scrollable Messages */
+.messages {
+    flex: 1;
+    overflow-y: auto; /* Vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin-bottom: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6; /* Better readability */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Scrollbar Styling */
+.messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #e587df, #9b4d96); /* Styled thumb */
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #9b4d96, #e587df); /* Hover effect */
+}
+
+/* Input and Send Button */
+#chatInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+#chatInput:focus {
+    border-color: #9b4d96;
+    outline: none;
+}
+
+#sendMessage {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background: linear-gradient(145deg, #e587df, #9b4d96);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sendMessage:hover {
+    background: linear-gradient(145deg, #222831, #222831);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Message Bubbles */
+.user-message, .bot-message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 100%; /* Prevent messages from being too wide */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Compatibility for older browsers */
+    white-space: pre-wrap; /* Preserve newlines and wrap text */
+    box-sizing: border-box; /* Include padding in max-width */
+}
+
+.user-message {
+    background-color: #f2e6ee;
+    color: #333;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.bot-message {
+    background: linear-gradient(145deg, #f2e6ee, #977dff);
+    color: #333;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.chat-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-note {
+    font-size: 10px;
+    color:#95122C;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .chat-sidebar {
+        width: 90%; /* Adjust to smaller screens */
+        max-height: 80vh; /* Adjust height for smaller devices */
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Jump Animation */
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stays in a fixed position */
+    bottom: 30px; /* 30px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Ensures it's on top of other elements */
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    color: white; /* White text */
+    cursor: pointer;
+    padding: 20px;
+    opacity: 0.8;
+    border-radius: 100px; /* Circular button */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222831; /* Dark background for the footer */
+    color: #ffffff;
+    padding: 3rem 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    flex-wrap: wrap;
+}
+
+.footer-container > div {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+/* Left Section */
+.footer-left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e587df; /* Teal accent */
+}
+
+.footer-brand p {
+    font-size: 1rem;
+    color: #888;
+}
+
+.footer-nav {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #e587df; 
+}
+
+/* Center Section: Social Media */
+.footer-center {
+    width: 30%;
+    text-align: center;
+}
+
+.footer-center h3 {
+    font-size: 1.5rem;
+    color:#e587df; 
+    margin-bottom: 1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Right Section: Location & Map */
+.footer-right {
+    width: 30%;
+    text-align: left;
+}
+
+.footer-right h3 {
+    font-size: 1.5rem;
+    color: #e587df;
+    margin-bottom: 1rem;
+}
+
+.footer-right p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-right a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-right a:hover {
+    color: #e587df; /* Teal hover effect */
+}
+
+/* Map Styling */
+.map-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: 250px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .footer-left {
+        order: 3; /* Footer Left comes last on mobile */
+    }
+
+    .footer-center {
+        order: 2; /* Social media section comes second */
+    }
+
+    .footer-right {
+        order: 1; /* Location & map section comes first */
+    }
+
+    .social-media {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .map-container iframe {
+        width: 90%;
+    }
+}

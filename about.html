@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="bldea_logo.webp" type="image/x-icon">
+    <title>About Us | BLDEACET Central Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #222831;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #222831;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-family: 'Arapey', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        span {
+            color: #9b4d96;
+        }
+
+        /* Content Styles */
+        .content {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #222831;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.3s; }
+        .section:nth-child(2) { animation-delay: 0.5s; }
+        .section:nth-child(3) { animation-delay: 0.7s; }
+        .section:nth-child(4) { animation-delay: 0.9s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+
+        .section h2 {
+            font-family: 'Arapey', sans-serif;
+            font-weight: 200;
+            color: #e587df;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .section h2:hover {
+            color: #fff5ff;
+        }
+
+        .section p {
+            font-family: 'Poppins', sans-serif;
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #222831;
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-out;
+            animation-delay: 0.9s;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1><b>//</b> About Us <span>&#10042;</span></h1>
+    </header>
+
+    <main class="content">
+        <section class="section">
+            <h2>Welcome to BLDEACET Central Library</h2>
+            <p>
+                The BLDEACET Central Library stands as a beacon of knowledge, fostering an environment of learning and innovation. We serve as a gateway to vast resources, enabling our students, faculty, and staff to embark on a journey of academic excellence and personal growth.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Our Mission</h2>
+            <p>
+                Unleashing the Power of Information: Providing Seamless Access to Comprehensive Resources for Teaching, Research & Learning.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Our Vision</h2>
+            <p>
+                Empowering Minds, Enriching Futures: A Leading Hub of Knowledge in Science & Technology.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>What We Offer</h2>
+            <p>
+                Our library is equipped with an extensive collection of course books, journals, publications, and multimedia resources. We provide:
+            </p>
+            <ul>
+                <li>A modern, well-maintained reading environment.</li>
+                <li>State-of-the-art digital tools for academic exploration.</li>
+                <li>Dedicated spaces for group discussions and individual study.</li>
+                <li>Friendly staff always ready to assist you.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Join Us</h2>
+            <p>
+                Whether you are a student eager to excel, a researcher delving deep into your field, or a faculty member seeking resources to enrich your teaching, the BLDEACET Central Library is here to support you every step of the way.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 BLDEACET Central Library. All rights reserved.</p>
+    </footer>
+</body>
+</html>

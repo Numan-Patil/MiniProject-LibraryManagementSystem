@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="bldea_logo.webp" type="image/x-icon">
+    <title>Gallery | BLDEACET Central Library</title>
+    <meta name="description" content="Explore library moments, workshops, and events at BLDEACET Central Library through our gallery.">
+    <meta name="keywords" content="BLDEACET, library, gallery, events, workshop, books">
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+    /* Existing styles here... */
+
+    /* Page Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Header Slide-in Animation */
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .gallery-header h1,
+    .gallery-header p {
+        opacity: 0;
+        animation: slideIn 1.5s ease-out;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .gallery-header h1 {
+        animation-delay: 0.5s;
+    }
+
+    .gallery-header p {
+        animation-delay: 1s;
+    }
+
+    /* Carousel Slide-in */
+    @keyframes slideInCarousel {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .carousel-container {
+        opacity: 0;
+        animation: slideInCarousel 1.5s ease-out;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+
+        .gallery-header {
+            color: #222831;
+            padding: 40px 10px;
+            text-align: center;
+        }
+
+        .gallery-header h1 {
+            font-family: 'Arapey', sans-serif;
+            font-size: 5rem;
+            font-weight: 300;
+            margin: 20px 0 10px;
+            line-height: 1.3;
+        }
+
+        .gallery-header .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #333;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .gallery-header em {
+            width:20ch;
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
+            font-weight: 700;
+            color: #9b4d96; 
+        }
+
+        .gallery-header p {
+            font-size: 1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        .gallery-header span{
+            color: #9b4d96;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 10px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+
+        .carousel-slide {
+            position: relative;
+            flex: 0 0 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #222831;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .carousel-slide:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #9b4d96, #6a1b9a);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            opacity: 1;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+
+        .bottom-links {
+            margin-top: 30px;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: #9b4d96;
+            font-weight: 600;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .btn-link:hover {
+            color: #222831;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #222831;
+            color: #fff;
+        }
+
+        footer strong{
+            color: #e587df;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        footer .foot{
+            color:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <header class="gallery-header">
+        <h1><span>&#10042;</span>Library Memories Gallery <span class="dot"></span><br><em>Moments of Knowledge</em></h1>
+        <p>Explore moments captured in our library, from events and reading sessions to knowledge-sharing and celebrations.</p>
+    </header>
+
+    <div class="carousel-container">
+        <button id="prev" class="nav-button" aria-label="Previous image">&lt;</button>
+
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_workshop-inauguration-VC-VTU.jpg" alt="Lib_workshop-inauguration-VC-VTU" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Inauguration of the BLDEACET Library Workshop</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_bldea-engg-library-001.jpg" alt="Lib_bldea-engg-library-001" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Interior View of BLDEACET Library</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_bldea-engg-library-002.jpg" alt="Lib_bldea-engg-library-002" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Reception Area of BLDEACET Library</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_bldea-engg-library-003.jpg" alt="Lib_bldea-engg-library-003" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Newspapers Section at BLDEACET Library</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_bldea-engg-library-005.jpg" alt="Lib_bldea-engg-library-005" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Library Check-in and Check-out Counter</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_bldeacet-library-2023-01.jpg" alt="Lib_bldeacet-library-2023-01" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Inauguration of BLDEACET Library</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_book-shelving.jpg" alt="Lib_book-shelving" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Book Shelves at BLDEACET Library</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Carousal_images\Lib_digital-library.jpg" alt="Lib_digital-library" loading="lazy">
+                    <div class="image-overlay">
+                        <h2>Digital Library Services</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="next" class="nav-button" aria-label="Next image">&gt;</button>
+    </div>
+
+    <div class="bottom-links">
+        <a href="about.html" class="btn-link">About Us</a>
+        <a href="privacy.html" class="btn-link">Privacy Policy</a>
+    </div>
+
+    <footer>
+        <p><strong>Note:</strong> Using the library photos for purposes other than fair use is prohibited. Please respect copyright and intellectual property rights.</p>
+        <p class="foot">&copy; 2024 BLDEACET Central Library. All rights reserved.</p>
+    </footer>
+
+    <script>
+            const track = document.querySelector('.carousel-track');
+    const images = document.querySelectorAll('.carousel img');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    let autoPlayInterval;
+
+function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    }, 5000); // Change every 5 seconds
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+document.querySelector('.carousel-container').addEventListener('mouseover', stopAutoPlay);
+document.querySelector('.carousel-container').addEventListener('mouseout', startAutoPlay);
+
+startAutoPlay(); // Start autoplay when the page loads
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: #f4f4f4; /* Light grey background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+span {
+    color: #9b4d96;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Hidden by default */
+    height: 100%;
+    width: 250px;
+    background-color: #222831; /* White with 70% opacity */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    color: #ffffff; /* Optional: set text color for better visibility */
+    z-index: 1000; /* Ensure it is above other content */
+    padding-top: 20px; /* Space for logo and heading */
+}
+
+/* Logo Styles */
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Padding for logo */
+}
+
+.sidebar .logo h3 {
+    font-family: 'Arapey', sans-serif; /* for headings */
+    font-weight: 100;
+    font-size: 1.5rem; /* Heading size */
+    margin: 0; /* Remove margin */
+}
+
+.sidebar .logo img {
+    height: 5rem; /* Adjust image size */
+    object-fit: cover; /* Ensures the image fits nicely */
+}
+
+.sidebar hr {
+    border: 1px solid #9b4d96; /* Purple color */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    color: white;
+}
+
+/* Dropdown Menu Styles */
+.dropdown .dropdown-list {
+    display: none;
+    padding-left: 1rem;
+}
+
+.dropdown.open .dropdown-list {
+    display: block;
+}
+
+.dropdown .toggle-btn {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown .toggle-btn::after {
+    content: '▼';
+    font-size: 12px;
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.dropdown.open .toggle-btn::after {
+    transform: rotate(180deg);
+}
+
+/* Search Bar Styles */
+.search-container {
+    margin-left: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the search bar container */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 800px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 0;
+    padding: 3px; /* Add padding for the gradient border */
+    background: linear-gradient(45deg, #ffffff, #ffffff, #ff6ec4, #7873f5 );
+    background-size: 300%;
+    background-position: 0% 50%;
+    transition: background-position 0.3s ease-in-out;
+}
+
+/* Hover animation */
+.search-bar:hover {
+    background-position: 100% 50%;
+}
+
+/* Inner container to isolate input */
+.search-bar-inner {
+    flex: 1;
+    height: 100%;
+    background-color: #fff; /* Matches the background color */
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Inner padding for input */
+    z-index: 1; /* Ensure it stays above the gradient */
+}
+
+/* Style for the input field */
+.search-bar-inner input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: black;
+}
+
+/* Filter Buttons Section */
+.filter-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 30px 0;
+}
+
+.filter-btn {
+    background: linear-gradient(45deg, #e587df, #9b4d96); /* Purple gradient */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(45deg, #222831, #222831); /* Purple gradient */
+}
+
+.Header-container {
+    margin-top: 5px;
+    margin-left: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure it can contain positioned children */
+}
+
+.Header {
+    position: relative; /* Ensures the text can overlay the image */
+}
+
+.Header img {
+    width: 1200px;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.Header-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    text-align: center;
+    color: white; /* Ensure text is readable over the image */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.Header-text p {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 10px;
+    color: #cccccc;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section h2 {
+    font-family: 'Arapey', sans-serif;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Book List Container */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Book Card Styling */
+.book-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Three cards in a row */
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 400px;
+}
+
+.book-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32%; /* Adjusted height for purple top */
+    background-color: #9b4d96;
+    border-radius: 15px 15px 0 0;
+    z-index: 0;
+}
+
+.book-card h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 35px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.book-card .book-meta {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.book-card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Borrow Button */
+.borrow-btn {
+    background-color: #9b4d96;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.borrow-btn:hover {
+    background-color: #222831;
+    transform: translateY(-3px);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+    .book-card {
+        width: calc(50% - 20px); /* Two cards in a row */
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        width: 100%; /* One card in a row */
+    }
+}

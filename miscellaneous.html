@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BLDEACET Central Library provides resources and services for students and staff, including course books, journals, and more.">
+    <link rel="icon" href="bldea_logo.webp" type="image/x-icon">
+    <title>Miscellaneous | BLDEACET Central Library</title>
+    <!-- Google Font (Arapey for headings) and Poppins for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;  /* Poppins for body text */
+    background-color: #f4f4f4;
+    color: black;
+    margin: 20px;
+    font-display: swap;
+}
+
+h2, h3 {
+    font-family: 'Poppins', sans-serif; /* for sub-headings */
+    font-weight: 600;
+}
+
+h1 {
+    font-family: 'Arapey', sans-serif; /* for headings */
+    font-weight: 100;
+    text-align: center;
+    font-size: 6rem;
+    margin-bottom: 20px;
+}
+
+span{
+    color: #9b4d96;
+}
+
+.Lorem {
+    text-align: center;
+    color:  #9b4d96;
+    margin-bottom: 10px;
+}
+
+.Lorem span{
+    color: #222831;
+    font-style: oblique;
+}
+
+/* Marquee effect */
+.Lorem {
+    text-align: center;
+    color: #9b4d96;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    display: block; /* Ensure the element is treated as a block */
+    position: relative;
+}
+
+.Lorem p {
+    display: inline-block;
+    animation: marquee 50s linear infinite; /* Infinite animation */
+}
+
+.Lorem span{
+    color: #222831;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(70%); /* Start from outside the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End outside the left */
+    }
+}
+
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the search bar container */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1007px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 0;
+    padding: 2px; /* Add padding for the gradient border */
+    background: linear-gradient(45deg, #ffffff, #ffffff, #ff6ec4, #7873f5 );
+    background-size: 300%;
+    background-position: 0% 50%;
+    transition: background-position 0.3s ease-in-out;
+}
+
+/* Hover animation */
+.search-bar:hover {
+    background-position: 100% 50%;
+}
+
+/* Inner container to isolate input */
+.search-bar-inner {
+    flex: 1;
+    height: 100%;
+    background-color: #fff; /* Matches the background color */
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Inner padding for input */
+    z-index: 1; /* Ensure it stays above the gradient */
+}
+
+/* Style for the input field */
+.search-bar-inner input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: black;
+}
+
+/* Styles for the result blocks */
+.result-block:nth-child(even) {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 30px;
+    background-color: #222831;
+    transition: all 0.3s ease;
+    display: block; /* Ensures the whole block is clickable */
+}
+
+.result-block:nth-child(odd) {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 30px;
+    background-color: #9b4d96;
+    transition: all 0.3s ease;
+    display: block; /* Ensures the whole block is clickable */
+}
+
+.result-block a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    display: block; /* Ensures the whole block is clickable */
+}
+
+.result-block a:hover {
+    text-decoration: underline;
+    color: #ccc;
+}
+
+/* Highlighted result */
+.highlight:nth-child(even) {
+    color: black; /* Dark text color */
+    background-color:#15B392; 
+}
+
+.highlight:nth-child(odd) {
+    color: black; /* Dark text color */
+    background-color:#15B392; 
+}
+
+.highlight a:hover  {
+  color: white; /* text color */
+}
+
+.library-img img{
+    align-content: center;
+    margin-inline-start: 600px;
+    height: 10rem; /* Adjust image size */
+    object-fit: cover; /* Ensures the image fits nicely */
+}
+
+/* "No Results Found" message */
+#noResultsMessage {
+    animation: shake 0.5s;
+    text-align: center;
+    margin-top: 20px;
+    color: #95122C;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: none; /* Initially hidden */
+}
+
+#SpecialMessage {
+    animation: pulse 2s linear infinite;
+    text-align: center;
+    margin-top: 20px;
+    color: #95122C;
+    font-weight: 1000;
+    font-size: 10rem;
+    display: none; /* Initially hidden */
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes pulse{
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    10% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    40% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(0.95);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.footer-note {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark text for readability */
+    font-size: 14px; /* Adjust font size */
+    text-align: center;
+    padding: 10px 20px; /* Padding for spacing */
+    margin-top: 20px; /* Space from other content */
+    border-top: 1px solid #ddd; /* Subtle top border */
+}
+
+    </style>
+</head>
+
+<body>
+    <h1><b>//</b> Miscellaneous.  <span>&#10042;</span></h1>
+    <br>
+    <section class="Lorem">
+        <p>
+            “Tell your heart that the fear of suffering is worse than the suffering itself.
+             And that no heart has ever suffered when it goes in search of its dreams,
+              because every second of the search is a second's encounter with God and with eternity.”
+           <span> ― Paulo Coelho, The Alchemist </span>
+        </p>
+    </section>
+    <br>
+    <!-- Search Bar Section -->
+    <div class="search-container">
+        <div class="search-bar">
+            <div class="search-bar-inner">
+            <input type="text" id="searchInput" placeholder=" &#10024; Search Miscellaneous..." aria-label="Search Miscellaneous" onkeydown="handleKey(event)">
+            </div>
+        </div>   
+    </div>
+
+    <!-- No Results Found Message -->
+    <div id="SpecialMessage"> &#128150; </div>
+    <div id="noResultsMessage"> &#10005; No results found.</div>
+
+    <br>
+<!-- Result Blocks Section (Alphabetically Arranged) -->
+<div id="results">
+    <div class="result-block" data-title="BLDEACET E-Content">
+        <a href="https://www.youtube.com/channel/UCQMulKIrbAck87XEihzoN8g/playlists" target="_blank">BLDEACET E-Content</a>
+    </div>
+    <div class="result-block" data-title="BLDEACET Faculty Publication">
+        <a href="https://bldeacet.irins.org/" target="_blank">BLDEACET Faculty Publication</a>
+    </div>
+    <div class="result-block" data-title="Drillbit-Plagiarism Detection Tool">
+        <a href="https://www.drillbitplagiarismcheck.com/auth/login" target="_blank">Drillbit-Plagiarism Detection Tool</a>
+    </div>
+    <div class="result-block" data-title="E-SHODHASINDHU">
+        <a href="https://ess.inflibnet.ac.in/" target="_blank">E-SHODHASINDHU</a>
+    </div>
+    <div class="result-block" data-title="Institutional Repository - DSpace">
+        <a href="https://192.168.0.199/jspui" target="_blank">Institutional Repository - DSpace</a>
+    </div>
+    <div class="result-block" data-title="IRINS">
+        <a href="https://bldeacet.irins.org/" target="_blank">IRINS</a>
+    </div>
+    <div class="result-block" data-title="Library Feedback">
+        <a href="https://tinyurl.com/ydsxuvkz" target="_blank">Library Feedback</a>
+    </div>
+    <div class="result-block" data-title="Library OPAC - Book Search/Book Renew">
+        <a href="http://103.112.215.70:8081/newgenlibctxt/" target="_blank">Library OPAC - Book Search/Book Renew</a>
+    </div>
+    <div class="result-block" data-title="MOOCS">
+        <a href="https://www.mooc.org/" target="_blank">MOOCS</a>
+    </div>
+    <div class="result-block" data-title="National Digital Library of India">
+        <a href="https://ndl.iitkgp.ac.in/" target="_blank">National Digital Library of India</a>
+    </div>
+    <div class="result-block" data-title="National Knowledge Network">
+        <a href="http://nkn.gov.in/en/" target="_blank">National Knowledge Network</a>
+    </div>
+    <div class="result-block" data-title="NPTEL">
+        <a href="https://nptel.ac.in/" target="_blank">NPTEL</a>
+    </div>
+    <div class="result-block" data-title="Remote Access for E-Resources Knimbus Discovery Tool + Mobile App">
+        <a href="https://www.knimbus.com/vtu.html" target="_blank">Remote Access for E-Resources Knimbus Discovery Tool + Mobile App</a>
+    </div>
+    <div class="result-block" data-title="Remote Access - Subscribed Content of E-Resources">
+        <a href="http://bldeacet.mapmyaccess.com" target="_blank">Remote Access - Subscribed Content of E-Resources</a>
+    </div>
+    <div class="result-block" data-title="SPOKEN TUTORIALS">
+        <a href="https://spoken-tutorial.org/" target="_blank">SPOKEN TUTORIALS</a>
+    </div>
+    <div class="result-block" data-title="SWAYAM">
+        <a href="https://swayam.gov.in/" target="_blank">SWAYAM</a>
+    </div>
+    <div class="result-block" data-title="Turnitin (Plagiarism Software Online Tool)">
+        <a href="https://www.turnitin.com" target="_blank">Turnitin (Plagiarism Software Online Tool)</a>
+    </div>
+    <div class="result-block" data-title="VTU Model Question Papers">
+        <a href="https://vtu.ac.in/model-question-paper-b-e-b-tech-b-arch/" target="_blank">VTU Model Question Papers</a>
+    </div>
+    <div class="result-block" data-title="VTU Previous Question Papers June/July 2021">
+        <a href="https://tinyurl.com/5n8znw8y" target="_blank">VTU Previous Question Papers June/July 2021</a>
+    </div>
+</div>
+<div class="library-img">
+<img src="Header.svg" alt="Library-image">
+</div>
+
+    <script>
+        function filterResults() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const blocks = document.querySelectorAll('.result-block');
+            let matchesFound = false;
+
+            // Remove previous highlights
+            blocks.forEach(block => {
+                block.classList.remove('highlight');
+            });
+
+            // If input is empty, reset the results to original state
+            if (input.trim() === '') {
+                blocks.forEach(block => {
+                    block.style.display = 'block'; // Show all blocks
+                });
+                document.getElementById('noResultsMessage').style.display = 'none'; // Hide "No Results" message
+                document.getElementById('SpecialMessage').style.display = 'none';
+                return; // Exit the function if input is empty
+            }
+            else if (input.trim() === '107') {
+                document.getElementById('SpecialMessage').style.display = 'block';
+                document.getElementById('noResultsMessage').style.display = 'none';
+                return
+            }
+
+            // Highlight matching blocks and keep them visible
+            blocks.forEach(block => {
+                if (block.dataset.title.toLowerCase().includes(input)) {
+                    block.classList.add('highlight'); // Highlight the matched block
+                    block.style.display = 'block'; // Show matched block
+                    matchesFound = true; // At least one match found
+                } else {
+                    block.style.display = 'block'; // Keep other blocks visible
+                }
+            });
+
+            // Sort blocks to move highlighted ones to the top
+            sortBlocks();
+
+            // Display "No Results Found" message if no matches
+            if (!matchesFound) {
+                document.getElementById('noResultsMessage').style.display = 'block';
+                document.getElementById('SpecialMessage').style.display = 'none';
+            } else {
+                document.getElementById('noResultsMessage').style.display = 'none';
+                document.getElementById('SpecialMessage').style.display = 'none';
+            }
+        }
+
+        function sortBlocks() {
+            const resultsContainer = document.getElementById('results');
+            const blocks = Array.from(resultsContainer.children);
+            blocks.sort((a, b) => {
+                const aHighlighted = a.classList.contains('highlight') ? -1 : 1;
+                const bHighlighted = b.classList.contains('highlight') ? -1 : 1;
+                return aHighlighted - bHighlighted;
+            });
+            // Reattach sorted blocks to the results container
+            blocks.forEach(block => resultsContainer.appendChild(block));
+        }
+
+        function handleKey(event) {
+            if (event.key === 'Enter') {
+                filterResults(); // Call filter results on Enter key press
+            }
+        }
+    </script>
+</body>
+<footer class="footer-note">
+    <p>
+        <span>Note:</span> The links provided on this page are external links. The college has taken its best measures to ensure the links are safe; however, users are advised to exercise caution while accessing them.
+    </p>
+</footer>
+</html>
