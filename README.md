@@ -10,9 +10,8 @@ This Library Management System is a web application designed to streamline libra
 4. [Pages and Functionalities](#pages-and-functionalities)
 5. [Installation](#installation)
 6. [Usage](#usage)
-7. [Screenshots](#screenshots)
-8. [Contributing](#contributing)
-9. [License](#license)
+7. [Contributing](#contributing)
+8. [License](#license)
 
 ## Features
 - **Login and Registration**: Secure authentication system for both students and administrators.
